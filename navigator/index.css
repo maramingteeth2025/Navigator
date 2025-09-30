@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #CDE8E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(logobackground.jpg);
+    background-position: center 2%;
+    background-size: cover;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35); /* Fixed box-shadow */
+    position: relative;
+    overflow: hidden;
+    width: 635px;
+    max-width: 100%;
+    min-height: 400px;
+}
+
+.container h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.container p {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.container button {
+    background-color: #0C134F;
+    color: #fff;
+    font-size: 12px;
+    padding: 12px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #7AB2B2;
+    color: #EEF7FF;
+    transition: background-color 0.3s;
+}
+
+.container button.hidden {
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container button.hidden:hover {
+    background-color: #7AB2B2;
+    color: #EEF7FF;
+    transition: background-color 0.3s;
+}
+
+.container form {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 13px;
+    height: 100%;
+}
+
+.container input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 80%; /* Fixed width */
+    outline: none;
+    margin-top: none;
+    margin-bottom: none;
+}
+
+
+h5 {
+    text-align: left;
+    align-items: center;
+}
+    
+
+.form-container.sign-up h1 {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.form-container.sign-up input[type="text"],
+.form-container.sign-up input[type="email"],
+.form-container.sign-up input[type="password"],
+.form-container.sign-up label {
+    width: 100%;
+}
+
+.form-container.sign-up label {
+    width: 100px;
+}
+
+.form-container.sign-up button:hover {
+    background-color:  #7AB2B2;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+}
+/* Centering the button inside the wrapper */
+.button-container {
+    grid-column: span 2; /* To ensure it spans across the grid columns */
+    text-align: center; /* Center content */
+}
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+.container.active .sign-up:hover {
+    background-color: #7AB2B2;
+}
+ .form-container .sign-in{
+    width: 100%;
+    padding: 10px 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+ }
+
+ h5{
+    color: #333;
+ }
+
+ .button-container {
+    grid-column: span 2; /* To ensure it spans across the grid columns */
+    text-align: center; /* Center content */
+}
+
+.button-container button {
+    padding: 12px 35px;
+    font-size: 13px;
+    border-radius: 8px;
+    background-color: #0C134F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: none;
+}
+
+
+@keyframes move {
+    0%, 50% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 150px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    background-color: #0C134F;
+    height: 100%;
+    background: linear-gradient(#0C134F, #4D869C);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+}
+
+.file-input-container {
+    width: 100%;
+    margin: 8px 0; /* Add space around the file input container */
+    text-align: center;
+    align-items: center;
+}
+
+.file-input-container label {
+    display: block; /* Make the label block level so it takes up full width */
+    font-size: 12px; /* Optional: adjust font size */
+    color: #333; /* Optional: adjust text color */
+    text-align: center;
+    align-items: center;
+  
+}
+
+.file-input-container input[type="file"] {
+    background-color: #eee;
+    border: none;
+    border-radius: 8px;
+    width: 100%; /* Ensure the file input takes full width */
+    text-align: center;
+    align-items: center;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.loginpassword-container{
+    width: 80%;
+    position: relative;
+
+}
+
+.loginpassword-container input{
+    width: 100%;
+    padding-right: 40px; /* To make room for the eye icon */
+
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* To make room for the eye icon */
+}
+
+.password-container .fa-eye, .password-container .fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: lightslategray; /* Optional: Adjust icon color */
+    font-size: 15px; /* Adjust icon size */
+}
+
+.loginpassword-container .fa-eye, .loginpassword-container .fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: lightslategray; /* Optional: Adjust icon color */
+    font-size: 15px; /* Adjust icon size */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        min-height: 550px;
+       
+    }
+
+    .container h1 {
+        font-size: 25px;
+    }
+
+    .container p {
+        font-size: 14px;
+    }
+
+    .container button {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .toggle-panel {
+        padding: 0 20px;
+    }
+
+    .form-container.sign-up input[type="text"],
+.form-container.sign-up input[type="email"],
+.form-container.sign-up input[type="password"],
+.form-container.sign-up label {
+    width: 100%;
+}
+
+.file-input-container{
+width: 100%;
+text-align: center;
+align-items: center;
+}
+.loginpassword-container{
+    width: 100%;
+    position: relative;
+
+}
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        height: 60%;
+        min-height: 500px;
+        padding: 20px;
+    }
+
+    .container h1 {
+        font-size: 25px;
+        margin-top: 3px;
+    }
+
+    .container p {
+        font-size: 15px;
+    }
+
+    .container button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .toggle-panel {
+        padding: 0 5px;
+    }
+
+    .form-container input,
+    .form-container .file-input-container input[type="file"] {
+        width: 100%; /* Ensure inputs are consistent in width */
+    }
+
+    .form-container.sign-up input[type="text"],
+    .form-container.sign-up input[type="email"],
+    .form-container.sign-up input[type="password"],
+    .form-container.sign-up label,
+    .form-container.sign-up select {
+        width: 100%; /* Make all inputs the same width */
+    }
+
+    .file-input-container {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .loginpassword-container {
+        width: 100%;
+        position: relative;
+    }
+}
+
